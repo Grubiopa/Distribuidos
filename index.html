@@ -4,42 +4,40 @@
         <title>Slider CSS - A Slider only with CSS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link href="./style.css" rel="stylesheet" type="text/css" />
-    </head>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>        	 
+        <script src="JS/credencialesFlickr.js"></script>
+        <script src="JS/app.js"></script>
+        <script src="JS/mapa.js"></script>       
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYQrL2WTzvWOZkjDGx4mSkkdMMPL_tTvM&callback=myMap"></script>	 
+        <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>  
     <body>
-        <div id="page">
-            <section>
-                <input type="radio" name="slider-select-element" id="element1" checked="checked" />
-                <input type="radio" name="slider-select-element" id="element2" />
-                <input type="radio" name="slider-select-element" id="element3" />
-                
-                <div id="slider-container">
-                    <div id="slider-box">
-                        <div class="slider-element">
-                            <article class="element-red">
-                                
-                            </article>
-                        </div>
-                        <div class="slider-element">
-                            <article class="element-green">
-                                
-                            </article>
-                        </div>
-                        <div class="slider-element">
-                            <article class="element-blue">
-                                
-                            </article>                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="slider-arrows">
-                    <label for="element1"></label>
-                    <label for="element2"></label>
-                    <label for="element3"></label>
-                </div>
-            </section>            
+           
+        <div id="cabecera"></div>
+        <div id="cuerpo">
+            <div id=lateralIzq class="col-md-1">
+                <p>HOLAAAAA</p>
+            </div>
+            <div id="centro" class ="col-md-10">
+                <section id="filtros">
+                    <h1>Filtros</h1>
+                </section>  
+                <section id="fotos">
+                    <h1> Flickr getPublicPhotos</h1>
+                    <div id="imagenes"></div>
+                </section>
+                <section id="mapa">
+                    <div class="col-md-2"></div>
+                    <div id="googleMap"class="col-md-8"></div>
+                    <div class="col-md-2"></div>
+                </section>
+            </div>
+            <div id="lateralDch" class="col-md-1">
+                <p>HOLAAAAAAAAAAAA</p>
+            </div>
         </div>
+       
     </body>
+    
 </html>
