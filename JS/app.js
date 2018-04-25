@@ -9,7 +9,7 @@ $(function cargaImagenesUsuario()
 				   var item = info.photos.photo[i];
 				   var url = 'https://farm'+item.farm+".staticflickr.com/"+item.server
 							  +'/'+item.id+'_'+item.secret+'_m.jpg';
-				   console.debug(url);
+				  
 				   $("#imagenes").append($("<img/>").attr("src",url));
 				}
 			}
@@ -28,7 +28,7 @@ $(function cargarImagenesRecientes()
 				var item = info.photos.photo[i];
 				var url = 'https://farm'+item.farm+".staticflickr.com/"+item.server
 							+'/'+item.id+'_'+item.secret+'_m.jpg';
-				console.debug(url);
+				
 				$("#imagenesRecientes").append($("<img/>").attr("src",url));
 			}
 		}
@@ -46,7 +46,7 @@ $(function cargarImagenesTexto()
 				   var item = info.photos.photo[i];
 				   var url = 'https://farm'+item.farm+".staticflickr.com/"+item.server
 							  +'/'+item.id+'_'+item.secret+'_m.jpg';
-				   console.debug(url);
+				  
 				   $("#imagenesTexto").append($("<img/>").attr("src",url));
 				}
 			}
