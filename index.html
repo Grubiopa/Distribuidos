@@ -7,37 +7,45 @@
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>        	 
         <script src="JS/credencialesFlickr.js"></script>
         <script src="JS/app.js"></script>
-        <script src="JS/mapa.js"></script>       
+        <script src="JS/mapa.js"></script>  
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYQrL2WTzvWOZkjDGx4mSkkdMMPL_tTvM&callback=myMap"></script>	 
         <link href="CSS/style.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>  
     <body>
-           
-        <div id="cabecera"></div>
-        <div id="cuerpo">
-            <div id=lateralIzq class="col-md-1">
-                <p>HOLAAAAA</p>
-            </div>
-            <div id="centro" class ="col-md-10">
-                <section id="filtros">
-                    <h1>Filtros</h1>
-                </section>  
-                <section id="fotos">
-                    <h1> Flickr getPublicPhotos</h1>
-                    <div id="imagenes"></div>
-                </section>
-                <section id="mapa">
-                    <div class="col-md-2"></div>
-                    <div id="googleMap"class="col-md-8"></div>
-                    <div class="col-md-2"></div>
-                </section>
-            </div>
-            <div id="lateralDch" class="col-md-1">
-                <p>HOLAAAAAAAAAAAA</p>
-            </div>
-        </div>
-       
+		<div class="container-fluid">
+			<div id="cabecera" class="row">
+				<div class="col-md-12">
+					<p>CABECERA</p>
+				</div>
+			</div>
+		    <div id="cuerpo" class="row">
+		        <div id=lateralIzq class="col-md-1">
+		            <p>LATERAL IZQUIERDO</p>
+		        </div>
+		        <div id="centro" class ="col-md-10">
+		            <section id="filtros">
+		                <h1>Filtros</h1>
+		            </section>
+		            <section id="fotos">
+		            	<h1> Flickr.Photos.search by text </h1>
+		            	<div id="imagenesTexto"></div>
+		            	<h1> Flickr.Photos.getRecent </h1>
+		            	<div id="imagenesRecientes"></div>
+		                <h1> Flickr getPublicPhotos</h1>
+		                <div id="imagenes"></div>
+		            </section>
+		            <section id="mapa">
+		                <div class="col-md-2"></div>
+		                <div id="googleMap"class="col-md-8"></div>
+		                <div class="col-md-2"></div>
+		            </section>
+		        </div>
+		        <div id="lateralDch" class="col-md-1">
+		            <p>LATERAL DERECHO</p>
+		        </div>
+		    </div>
+		</div>       
     </body>
     
 </html>
