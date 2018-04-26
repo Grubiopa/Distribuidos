@@ -39,7 +39,7 @@ $(function cargaImagenesMaxUpdateDate()
 $(function cargaImagenesSort() 
 	{
 		$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
-			 + api_key + '&user_id=' +user_id + '&sort=' + 
+			 + api_key + '&user_id=' +user_id + '&sort=' + sort +
 			'&format=json&nojsoncallback=1',
 			function (info){
 				var i;
