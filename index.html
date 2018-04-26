@@ -7,7 +7,8 @@
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>        	 
         <script src="JS/credencialesFlickr.js"></script>
         <script src="JS/app.js"></script>
-        <script src="JS/mapa.js"></script>  
+        <script src="JS/mapa.js"></script> 
+		<script src="JS/ejemplo.js"></script> 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYQrL2WTzvWOZkjDGx4mSkkdMMPL_tTvM&callback=myMap"></script>	 
         <link href="CSS/style.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,6 +27,17 @@
 		        <div id="centro" class ="col-md-10">
 		            <section id="filtros">
 		                <h1>Filtros</h1>
+						<select id="selecFiltros" onchange="myFunction()">
+							<option value="none">Ninguno</option>
+							<option value="text">Texto</option>
+							<option value="media">Media</option>
+							<option value="minUpdateDate">MinUpdateDate</option>
+							<option value="maxUpdateDate">MaxUpdateDate</option>
+							<option value="placeId">placeId</option>
+							<option value="place">place</option>
+						</select>
+						<div id="elementosBusqueda">
+						</div>
 		            </section>
 		            <section id="fotos">
 		            	<h1> Flickr.Photos.search by text </h1>
@@ -45,7 +57,7 @@
 		            <p>LATERAL DERECHO</p>
 		        </div>
 		    </div>
-		</div>       
+		</div>  	
     </body>
     
 </html>
