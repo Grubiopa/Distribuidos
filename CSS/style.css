@@ -2,6 +2,25 @@
 body {
     text-align: center;
 }
+#cabecera {
+	background-color: black;
+	color: white;
+}
+footer {
+	background-color: black;
+	color: white;
+}
+#cuerpo {
+	background-color: lightgrey;
+}
+#lateralIzq {
+	background-color: #ff0066;
+	color: white;
+}
+#lateralDch {
+	background-color: #ff0066;
+	color: white;
+}
 #googleMap{
     width: 700px;
     height: 400px;
