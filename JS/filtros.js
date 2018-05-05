@@ -1,4 +1,4 @@
-$(function cargaImagenesMinUpdateDate() 
+/*$(function cargaImagenesMinUpdateDate() 
 	{
 		$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' 
 			 + api_key + '&user_id=' +user_id + '&min_uploaded_date=' + date + 
@@ -110,4 +110,4 @@ $(function cargaImagenesPlace()
 			}
 		)	
 	}
-);
+);*/

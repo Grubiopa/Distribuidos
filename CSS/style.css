@@ -1,27 +1,32 @@
 
 body {
-    text-align: center;
+	text-align: center;
+
+
 }
 #cabecera {
 	background-color: black;
 	color: white;
 }
 footer {
+	
 	background-color: black;
 	color: white;
 }
 #cuerpo {
 	background-color: lightgrey;
+	padding-bottom: 1%;
 }
 #lateralIzq {
 	background-color: #ff0066;
 	color: white;
+	height: 100%;
 }
 #lateralDch {
 	background-color: #ff0066;
 	color: white;
 }
 #googleMap{
-    width: 700px;
+    width: 100%;
     height: 400px;
 }
