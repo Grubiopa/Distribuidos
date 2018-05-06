@@ -15,10 +15,21 @@ function cargarImagenesTexto() {
                     $("#resultados").append("<h3>Resultados por Texto</h3>");
                     var i;
                     for (i = 0; i < info.photos.photo.length; i++) {
-                        var item = info.photos.photo[i];
-                        var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-						
-                        $("#resultados").append($("<a/>").attr("class", "example-image-link").attr("href", url).attr("data-lightbox", "example-set").attr("data-title", "Click the right half of the image to move forward").append($("<img/>").attr("src", url).attr("alt", 'image-' + i)));
+                        var url2;
+                var item = info.photos.photo[i];
+                var url;
+					
+				$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=' 
+					+ api_key + '&photo_id=' + item.id + 
+					'&format=json&nojsoncallback=1',
+						function(info2){
+							
+							url = info2.sizes.size[3].source;
+							url2 = info2.sizes.size[7].source;						
+							
+							$("#resultados").append($("<a/>").attr("class","example-image-link").attr("href",url2).attr("data-lightbox","example-set").attr("data-title","Click the right half of the image to move forward").append($("<img/>").attr("src",url).attr("alt",'image-' + i)));
+						}
+				)	
                     }
                 }
             }
@@ -37,10 +48,21 @@ function cargaImagenesMaxTakenDate() {
         function(info) {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
+                var url2;
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-
-                $("#resultados").append($("<img/>").attr("src", url));
+                var url;
+					
+				$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=' 
+					+ api_key + '&photo_id=' + item.id + 
+					'&format=json&nojsoncallback=1',
+						function(info2){
+							
+							url = info2.sizes.size[3].source;
+							url2 = info2.sizes.size[7].source;						
+							
+							$("#resultados").append($("<a/>").attr("class","example-image-link").attr("href",url2).attr("data-lightbox","example-set").attr("data-title","Click the right half of the image to move forward").append($("<img/>").attr("src",url).attr("alt",'image-' + i)));
+						}
+				)	
             }
         }
     )
@@ -56,10 +78,21 @@ function cargaImagenesMinTakenDate() {
         function(info) {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
+                var url2;
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-
-                $("#resultados").append($("<img/>").attr("src", url));
+                var url;
+					
+				$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=' 
+					+ api_key + '&photo_id=' + item.id + 
+					'&format=json&nojsoncallback=1',
+						function(info2){
+							
+							url = info2.sizes.size[3].source;
+							url2 = info2.sizes.size[7].source;						
+							
+							$("#resultados").append($("<a/>").attr("class","example-image-link").attr("href",url2).attr("data-lightbox","example-set").attr("data-title","Click the right half of the image to move forward").append($("<img/>").attr("src",url).attr("alt",'image-' + i)));
+						}
+				)	
             }
         }
     )
@@ -75,10 +108,21 @@ function cargaContenidoByMedia() {
         function(info) {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
+                var url2;
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-
-                $("#resultados").append($("<img/>").attr("src", url));
+                var url;
+					
+				$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=' 
+					+ api_key + '&photo_id=' + item.id + 
+					'&format=json&nojsoncallback=1',
+						function(info2){
+							
+							url = info2.sizes.size[3].source;
+							url2 = info2.sizes.size[7].source;						
+							
+							$("#resultados").append($("<a/>").attr("class","example-image-link").attr("href",url2).attr("data-lightbox","example-set").attr("data-title","Click the right half of the image to move forward").append($("<img/>").attr("src",url).attr("alt",'image-' + i)));
+						}
+				)	
             }
         }
     )
@@ -95,10 +139,21 @@ function cargarImagenesRecientes() {
         function(info) {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
+                var url2;
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-
-                $("#resultados").append($("<a/>").attr("class", "example-image-link").attr("href", url).attr("data-lightbox", "example-set").attr("data-title", "Click the right half of the image to move forward").append($("<img/>").attr("src", url).attr("alt", 'image-' + i)));
+                var url;
+					
+				$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=' 
+					+ api_key + '&photo_id=' + item.id + 
+					'&format=json&nojsoncallback=1',
+						function(info2){
+							
+							url = info2.sizes.size[3].source;
+							url2 = info2.sizes.size[7].source;						
+							
+							$("#resultados").append($("<a/>").attr("class","example-image-link").attr("href",url2).attr("data-lightbox","example-set").attr("data-title","Click the right half of the image to move forward").append($("<img/>").attr("src",url).attr("alt",'image-' + i)));
+						}
+				)	
             }
         }
     )
@@ -113,9 +168,24 @@ function cargaImagenesUsuario() {
         function(info) {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
+                var url2;
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-                $("#resultados").append($("<a/>").attr("class", "example-image-link").attr("href", url).attr("data-lightbox", "example-set").attr("data-title", "Click the right half of the image to move forward").append($("<img/>").attr("src", url).attr("alt", 'image-' + i)));
+                var url;
+					
+				$.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=' 
+					+ api_key + '&photo_id=' + item.id + 
+					'&format=json&nojsoncallback=1',
+						function(info2){
+							
+							url = info2.sizes.size[3].source;
+							url2 = info2.sizes.size[7].source;	
+								
+							console.log(info2);
+							
+							$("#resultados").append($("<a/>").attr("class","example-image-link").attr("href",url2).attr("data-lightbox","example-set").attr("data-title","Click the right half of the image to move forward").append($("<img/>").attr("src",url).attr("alt",'image-' + i)));
+						}
+				)	
+                
             }
         }
     )
