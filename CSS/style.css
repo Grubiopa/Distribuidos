@@ -1,30 +1,30 @@
-
 body {
 	text-align: center;
-
-
 }
 #cabecera {
 	background-color: black;
 	color: white;
 }
-footer {
-	
+footer {	
 	background-color: black;
 	color: white;
+}
+h3 {
+	text-align: center;
+}
+#filtros {
+	padding: 25px;
+}
+#elementosBusqueda {
+	padding: 25px 0px;
+}
+#resultados {
+	border-radius: 15px;
+	background-color: #99ccff;
 }
 #cuerpo {
 	background-color: lightgrey;
 	padding-bottom: 1%;
-}
-#lateralIzq {
-	background-color: #ff0066;
-	color: white;
-	height: 100%;
-}
-#lateralDch {
-	background-color: #ff0066;
-	color: white;
 }
 #googleMap{
     width: 100%;
