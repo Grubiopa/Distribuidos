@@ -231,7 +231,7 @@ function cargarParaMapa(foto) {
                     ///EMPEZAMOS A TRAER FOTOS
                     $("#resultados").append("<h3>Resultados fotos mapa</h3>");
                     $.getJSON(
-                        'https://api.flickr.com/services/rest/?method=flickr.photos.geo.photosForLocation&api_key=' + api_key + '&lat=39.103843&lon=-4.032808&format=json&nojsoncallback=1&auth_token=72157695801554034-c9c44b338b8a21af&api_sig=52dd311412fcea138f8fba83253dac40',
+                        'https://api.flickr.com/services/rest/?method=flickr.photos.geo.photosForLocation&api_key=' + api_key + '&lat='+ latitude + '&lon=' + longitude+'&format=json&nojsoncallback=1&auth_token='+ auth_tok + '&api_sig=' + api_sign ,
                         function(info) {
                             console.log(info);
                             var i;
