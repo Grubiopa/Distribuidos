@@ -131,43 +131,42 @@ function myFunction() {
             break;
         case "recents":
             $("#elementosBusqueda").empty();
-
-            $("#elementosBusqueda").append("<input id=\"busqRecentsPerPage\" type=\"number\" name=\"numPag\" min=\"1\" max=\"10\" value=\"1\">");
-            $("#elementosBusqueda").append("<button onclick=\"cargarImagenesRecientes()\">Buscar</button>");
+			$("#elementosBusqueda").append("<p>Número de fotos por página (1, 20):</p>");
+            $("#elementosBusqueda").append("<input class=\"form-control\" id=\"busqRecentsPerPage\" type=\"number\" name=\"numPag\" min=\"1\" max=\"20\" value=\"1\">");
+            $("#elementosBusqueda").append("<button class=\"btn btn-primary\" onclick=\"cargarImagenesRecientes()\">Buscar</button>");
             ocultarMapa();
             break;
         case "user":
             $("#elementosBusqueda").empty();
-
-            $("#elementosBusqueda").append("<button onclick=\"cargaImagenesUsuario()\">Buscar</button>");
+            $("#elementosBusqueda").append("<button class=\"btn btn-primary\" onclick=\"cargaImagenesUsuario()\">Buscar</button>");
             ocultarMapa();
             break;
         case "text":
             $("#elementosBusqueda").empty();
-
-            $("#elementosBusqueda").append("<input id=\"busqText\" type=\"text\" name=\"texto\">");
-            $("#elementosBusqueda").append("<button onclick=\"cargarImagenesTexto()\">Buscar</button>");
+			$("#elementosBusqueda").append("<p>Título, descripción o tags:</p>");
+            $("#elementosBusqueda").append("<input class=\"form-control\" id=\"busqText\" type=\"text\" name=\"texto\">");
+            $("#elementosBusqueda").append("<button class=\"btn btn-primary\" onclick=\"cargarImagenesTexto()\">Buscar</button>");
             ocultarMapa();
             break;
         case "media":
             $("#elementosBusqueda").empty();
-
-            $("#elementosBusqueda").append("<select id=\"selecMedia\"><option value=\"all\">Todos</option><option value=\"photos\">Fotos</option><option value=\"video\">Vídeos</option></select>");
-            $("#elementosBusqueda").append("<button onclick=\"cargaContenidoByMedia()\">Buscar</button>");
+			$("#elementosBusqueda").append("<p>Selecciona tipo de media:</p>");
+            $("#elementosBusqueda").append("<select class=\"custom-select\" id=\"selecMedia\"><option value=\"all\">Todos</option><option value=\"photos\">Fotos</option><option value=\"video\">Vídeos</option></select>");
+            $("#elementosBusqueda").append("<button class=\"btn btn-primary\" onclick=\"cargaContenidoByMedia()\">Buscar</button>");
             ocultarMapa();
             break;
-        case "minUpdateDate":
+        case "minTakenDate":
             $("#elementosBusqueda").empty();
-
-            $("#elementosBusqueda").append("<input id=\"dateMin\" type=\"date\" name=\"dateMin\">");
-            $("#elementosBusqueda").append("<button onclick=\"cargaImagenesMinTakenDate()\">Buscar</button>");
+			$("#elementosBusqueda").append("<p>Fecha mínima tomada:</p>");
+            $("#elementosBusqueda").append("<input class=\"form-control\" id=\"dateMin\" type=\"date\" name=\"dateMin\">");
+            $("#elementosBusqueda").append("<button class=\"btn btn-primary\" onclick=\"cargaImagenesMinTakenDate()\">Buscar</button>");
             ocultarMapa();
             break;
-        case "maxUpdateDate":
+        case "maxTakenDate":
             $("#elementosBusqueda").empty();
-
-            $("#elementosBusqueda").append("<input id=\"dateMax\" type=\"date\" name=\"dateMax\">");
-            $("#elementosBusqueda").append("<button onclick=\"cargaImagenesMaxTakenDate()\">Buscar</button>");
+			$("#elementosBusqueda").append("<p>Fecha máxima tomada:</p>");
+            $("#elementosBusqueda").append("<input class=\"form-control\" id=\"dateMax\" type=\"date\" name=\"dateMax\">");
+            $("#elementosBusqueda").append("<button class=\"btn btn-primary\" onclick=\"cargaImagenesMaxTakenDate()\">Buscar</button>");
             ocultarMapa();
             break;
         case "place":
@@ -229,6 +228,7 @@ function cargarParaMapa(foto) {
                     longitude = intlRound(longitude, 6, false);
                     console.log(latitude + ', ' + longitude);
                     ///EMPEZAMOS A TRAER FOTOS
+                    $("#resultados").empty();
                     $("#resultados").append("<h3>Resultados fotos mapa</h3>");
                     $.getJSON(
                         'https://api.flickr.com/services/rest/?method=flickr.photos.geo.photosForLocation&api_key=' + api_key + '&lat='+ latitude + '&lon=' + longitude+'&format=json&nojsoncallback=1&auth_token='+ auth_tok + '&api_sig=' + api_sign ,
@@ -257,7 +257,6 @@ function ocultarMapa() {
 }
 
 function mostrarMapa() {
-
     $("#mapa").removeClass("hide");
     $("#mapa").addClass("show");
 }
