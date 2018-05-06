@@ -10,14 +10,14 @@ function cargarImagenesTexto() {
             '&format=json&nojsoncallback=1',
             function(info) {
                 if (info.photos.photo.length == 0) {
-                    $("#resultados").append("<h3>No hay elementos que coincida con la búsqueda.</h3>");
+                    $("#resultados").append("<h3>No hay resultados</h3>");
                 } else {
                     $("#resultados").append("<h3>Resultados por Texto</h3>");
                     var i;
                     for (i = 0; i < info.photos.photo.length; i++) {
                         var item = info.photos.photo[i];
                         var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-
+						
                         $("#resultados").append($("<a/>").attr("class", "example-image-link").attr("href", url).attr("data-lightbox", "example-set").attr("data-title", "Click the right half of the image to move forward").append($("<img/>").attr("src", url).attr("alt", 'image-' + i)));
                     }
                 }
@@ -26,40 +26,39 @@ function cargarImagenesTexto() {
     }
 }
 
-function cargaImagenesMaxUpdateDate() {
+
+function cargaImagenesMaxTakenDate() {
     var date = $("#dateMax").val();
     $("#resultados").empty();
-    $("#resultados").append("<h3>Resultados por MaxUpdateDate</h3>");
+    $("#resultados").append("<h3>Resultados por MaxTakenDate</h3>");
     $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' +
-        api_key + '&user_id=' + user_id + '&max_uploaded_date=' + date +
+        api_key + '&user_id=' + user_id + '&max_taken_date=' + date +
         '&format=json&nojsoncallback=1',
         function(info) {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server +
-                    '/' + item.id + '_' + item.secret + '_m.jpg';
-                console.debug(url);
+                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
+
                 $("#resultados").append($("<img/>").attr("src", url));
             }
         }
     )
 }
 
-function cargaImagenesMinUpdateDate() {
+function cargaImagenesMinTakenDate() {
     var date = $("#dateMin").val();
     $("#resultados").empty();
-    $("#resultados").append("<h3>Resultados por MinUpdateDate</h3>");
+    $("#resultados").append("<h3>Resultados por MinTakenDate</h3>");
     $.getJSON('https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=' +
-        api_key + '&user_id=' + user_id + '&min_uploaded_date=' + date +
+        api_key + '&user_id=' + user_id + '&min_taken_date=' + date +
         '&format=json&nojsoncallback=1',
         function(info) {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server +
-                    '/' + item.id + '_' + item.secret + '_m.jpg';
-                console.debug(url);
+                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
+
                 $("#resultados").append($("<img/>").attr("src", url));
             }
         }
@@ -77,9 +76,8 @@ function cargaContenidoByMedia() {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server +
-                    '/' + item.id + '_' + item.secret + '_m.jpg';
-                console.debug(url);
+                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
+
                 $("#resultados").append($("<img/>").attr("src", url));
             }
         }
@@ -98,8 +96,7 @@ function cargarImagenesRecientes() {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server +
-                    '/' + item.id + '_' + item.secret + '_m.jpg';
+                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
 
                 $("#resultados").append($("<a/>").attr("class", "example-image-link").attr("href", url).attr("data-lightbox", "example-set").attr("data-title", "Click the right half of the image to move forward").append($("<img/>").attr("src", url).attr("alt", 'image-' + i)));
             }
@@ -117,9 +114,7 @@ function cargaImagenesUsuario() {
             var i;
             for (i = 0; i < info.photos.photo.length; i++) {
                 var item = info.photos.photo[i];
-                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server +
-                    '/' + item.id + '_' + item.secret + '_m.jpg';
-
+                var url = 'https://farm' + item.farm + ".staticflickr.com/" + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
                 $("#resultados").append($("<a/>").attr("class", "example-image-link").attr("href", url).attr("data-lightbox", "example-set").attr("data-title", "Click the right half of the image to move forward").append($("<img/>").attr("src", url).attr("alt", 'image-' + i)));
             }
         }
@@ -131,7 +126,7 @@ function myFunction() {
     switch (valFiltro) {
         case "none":
             $("#elementosBusqueda").empty();
-
+			$("#resultados").empty();
             ocultarMapa();
             break;
         case "recents":
@@ -165,19 +160,14 @@ function myFunction() {
             $("#elementosBusqueda").empty();
 
             $("#elementosBusqueda").append("<input id=\"dateMin\" type=\"date\" name=\"dateMin\">");
-            $("#elementosBusqueda").append("<button onclick=\"cargaImagenesMinUpdateDate()\">Buscar</button>");
+            $("#elementosBusqueda").append("<button onclick=\"cargaImagenesMinTakenDate()\">Buscar</button>");
             ocultarMapa();
             break;
         case "maxUpdateDate":
             $("#elementosBusqueda").empty();
 
             $("#elementosBusqueda").append("<input id=\"dateMax\" type=\"date\" name=\"dateMax\">");
-            $("#elementosBusqueda").append("<button onclick=\"cargaImagenesMaxUpdateDate()\">Buscar</button>");
-            ocultarMapa();
-            break;
-        case "placeId":
-            $("#elementosBusqueda").empty();
-
+            $("#elementosBusqueda").append("<button onclick=\"cargaImagenesMaxTakenDate()\">Buscar</button>");
             ocultarMapa();
             break;
         case "place":
